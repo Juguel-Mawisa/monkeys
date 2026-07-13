@@ -25,7 +25,7 @@ interface Props {
         | 'div' 
         | 'p' 
         | 'span'
-    theme?: "blank" | "gray" | "white" | "primary" | "secondary" ;
+    theme?: "blank" | "gray" | "white" | "primary" | "secondary" | "danger" | "warning" | "success";
     weight?: "regular" | "medium"
     className?: string
     children: React.ReactNode
@@ -102,7 +102,14 @@ export default function Typography({
     case "secondary":
       colorStyles ="text-secondary"
       break;
-    default:
+    case "danger":
+      colorStyles ="text-alert-danger"
+      break;
+    case "warning":
+      colorStyles ="text-alert-warning"
+      break;
+    case "success":
+      colorStyles ="text-alert-success"
       break;
   }
 

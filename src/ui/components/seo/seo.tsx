@@ -16,3 +16,7 @@ export default function Seo({ title, description }: Props) {
     </>
   );
 }
+
+import Container from "@/ui/components/container/container";
+import Image from "next/image";
+

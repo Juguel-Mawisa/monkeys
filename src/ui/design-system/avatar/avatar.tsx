@@ -10,21 +10,21 @@ interface Props{
 
 
 export default function Avatar({ size = "medium", src, alt }: Props) {
-    let sizeAvatar : string = "" ;
+    let sizeStyles : string = "" ;
     
     switch (size) {
         case "small":
-            sizeAvatar = "w-[24px] h-[24px]";
+            sizeStyles = "w-[24px] h-[24px]";
             break;
         case "medium":// default
-            sizeAvatar = "w-[34px] h-[34px]";
+            sizeStyles = "w-[34px] h-[34px]";
             break;
         case "large":
-            sizeAvatar = "w-[500px] h-[500px]";
+            sizeStyles = "w-[50px] h-[50px]";
             break;
     }
   return (
-    <div  className={clsx(sizeAvatar, "bg-gray-400 rounded-full relative")}>
+    <div  className={clsx(sizeStyles, "bg-gray-400 rounded-full relative")}>
       <Image
         fill
         src={src}

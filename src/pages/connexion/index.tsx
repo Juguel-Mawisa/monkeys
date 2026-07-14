@@ -1,6 +1,7 @@
 import Seo from "@/ui/components/seo/seo";
 import { Layout } from "@/ui/components/layout/layout";
 import LoginContainer from "@/ui/modules/authentification/login/login-container";
+import { GUEST } from "@/lib/session-status";
 
 
 export default function Connexion() {
@@ -11,7 +12,7 @@ export default function Connexion() {
           title="Connexion sur Monkeys Coders" 
           description="Page de connexion"
         />
-        <Layout>
+        <Layout sessionStatus={GUEST}>
           <LoginContainer/>
         </Layout>
         

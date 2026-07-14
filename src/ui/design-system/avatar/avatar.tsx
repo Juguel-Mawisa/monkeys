@@ -27,7 +27,7 @@ export default function Avatar({ size = "medium", src, alt }: Props) {
     <div  className={clsx(sizeStyles, "bg-gray-400 rounded-full relative")}>
       <Image
         fill
-        src={src}
+        src={src ? src : "/assets/svg/avatarblue.jpg"}
         alt={alt}
         // width={50}
         // height={50}

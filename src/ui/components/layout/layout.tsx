@@ -1,15 +1,18 @@
+import { SessionStatusTypes } from "@/types/session-status-types"
 import BreadCrumbs from "../breadcrumbs/breadcrumbs"
 import Container from "../container/container"
 import Footer from "../navigation/footer"
 import Navigation from "../navigation/navigation"
 import UserAccountNavigation from "../navigation/user-account-navigation"
+import { Session } from "../session/session"
 
 interface Props {
     children: React.ReactNode
     isDisplayBreadCrumbs?: boolean
     withSidebar?: boolean
+    sessionStatus?: SessionStatusTypes
 }
-export const Layout = ({children, isDisplayBreadCrumbs= true, withSidebar} : Props) => {
+export const Layout = ({children, isDisplayBreadCrumbs= true, withSidebar, sessionStatus} : Props) => {
 
     let view: React.ReactElement = <></>
     if (withSidebar) {
@@ -30,11 +33,11 @@ export const Layout = ({children, isDisplayBreadCrumbs= true, withSidebar} : Pro
     }
 
     return(
-        <>
+        <Session sessionStatus={sessionStatus}>
             <Navigation/>
             {isDisplayBreadCrumbs && <BreadCrumbs/>}
             {view}
             <Footer/>
-        </>
+        </Session>
     )
 }

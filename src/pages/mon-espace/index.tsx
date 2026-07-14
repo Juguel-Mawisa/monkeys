@@ -1,10 +1,10 @@
-import Seo from "@/ui/components/seo/seo";
+import { REGISTERED } from "@/lib/session-status";
 import { Layout } from "@/ui/components/layout/layout";
-import LoginContainer from "@/ui/modules/authentification/login/login-container";
+import Seo from "@/ui/components/seo/seo";
 import UserAccounrContainer from "@/ui/modules/user-profile/user-account/user-accounr-container";
 
 
-export default function Connetion() {
+export default function UserAccount() {
   return (
     
     <>
@@ -12,7 +12,7 @@ export default function Connetion() {
           title="Mon espace - Connection sur Monkeys Coders" 
           description="Description de la page"
         />
-        <Layout withSidebar>
+        <Layout withSidebar sessionStatus={REGISTERED}>
           <UserAccounrContainer/>
         </Layout>
         

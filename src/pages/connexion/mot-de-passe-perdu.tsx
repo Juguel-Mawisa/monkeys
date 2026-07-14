@@ -1,6 +1,7 @@
 import Seo from "@/ui/components/seo/seo";
 import { Layout } from "@/ui/components/layout/layout";
 import ForgotPasswordContainer from "@/ui/modules/authentification/forgot-password/forgot-password-container";
+import { GUEST } from "@/lib/session-status";
 
 
 export default function ForgotPassword() {
@@ -11,7 +12,7 @@ export default function ForgotPassword() {
           title="ForgotPassword sur Monkeys Coders" 
           description="Page de ForgotPassword"
         />
-        <Layout>
+        <Layout sessionStatus={GUEST}>
           <ForgotPasswordContainer/>
         </Layout>
         
